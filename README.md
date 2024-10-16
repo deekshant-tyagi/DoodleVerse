@@ -1,8 +1,10 @@
 # Collaborative Drawing App
 
-- **Name**: GangDraw
+- **Name**: DoodleSpace
 
-GangDraw is a Collaborative Drawing App built using the MERN (MongoDB, Express.js, React.js, Node.js) stack with real-time collaboration features enabled through Socket.IO. It allows users to create, collaborate, and share whiteboards in real-time with other users.
+
+DoodleSpace
+ is a Collaborative Drawing App built using the MERN (MongoDB, Express.js, React.js, Node.js) stack with real-time collaboration features enabled through Socket.IO. It allows users to create, collaborate, and share whiteboards in real-time with other users.
 
 ## Features
 
