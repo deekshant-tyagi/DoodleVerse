@@ -23,3 +23,5 @@ DoodleSpace
 - **Node.js**: Backend environment for running server-side code.
 - **Socket.IO**: Enables real-time, bidirectional communication between clients and server.
 - **JWT Authentication**: For user authentication and authorization.
+
+- **💰 Heads up: Deploying this Socket.IO app isn't free! You'll need paid hosting + database services for production use. Free tiers have connection limits that might break real-time features.
