@@ -8,7 +8,7 @@ DoodleSpace
 
 ## Features
 
-- **User Signup/Login:** Users can create an account or login to their existing account.
+- **User Signup/Login:** Users can create an account or login to their existing account..
 - **Whiteboard Creation:** Users can create new whiteboards which are saved in the MongoDB database and displayed on the user's dashboard.
 - **Unique Whiteboard Links:** Each whiteboard has a unique ID and is opened on a unique link.
 - **Real-time Collaboration:** Live sessions are started when the owner is present on the whiteboard page. Multiple users can collaborate and draw simultaneously in real-time.
