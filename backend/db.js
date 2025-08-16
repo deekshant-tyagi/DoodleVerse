@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
     
 mongoose.connect(
-  "mongodb+srv://kanishkaranjan9:m94FmRD60xRnl7DN@cluster99.6dtxk.mongodb.net/"
+  "mongodb+srv://deekshanttyagii:Kn78AyJUNoOb839Q@cluster0.llq7g.mongodb.net/doodleProject?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 

@@ -42,10 +42,6 @@ const drawingAuthMiddleware = (req, res, next) => {
   } catch (error) {
     req.isHost = false;
     next();
-    // res.status(411).json({
-    //     message: "something went wrong",
-    //     success: false
-    // })
   }
 };
 module.exports = {

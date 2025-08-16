@@ -61,7 +61,6 @@ drawingRouter.get("/user-drawings", authMiddleware, async (req, res) => {
   });
 });
 
-//"/5wegerb54ffg65b6sd5b"
 
 drawingRouter.get("/:DrawId", drawingAuthMiddleware, async (req, res) => {
   const drawId = req.params["DrawId"];

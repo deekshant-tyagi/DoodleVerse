@@ -1,4 +1,4 @@
-JWT_SECRET = "shallylohia";
+JWT_SECRET = "deekshantTyagi";
 module.exports = {
     JWT_SECRET
 };
