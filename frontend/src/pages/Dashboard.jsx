@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CreateModal from "../components/CreateModal";
 import Loader from "../components/Loader";
+import { getApiUrl, API_CONFIG } from "../config/api";
 
 export const Dashboard = () => {
   const [drawings, setDrawings] = useState([]);
@@ -22,7 +23,7 @@ export const Dashboard = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/api/v1/me", {
+      .get(getApiUrl(API_CONFIG.ENDPOINTS.ME), {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -36,7 +37,7 @@ export const Dashboard = () => {
       });
 
     axios
-      .get("http://localhost:3000/api/v1/drawing/user-drawings", {
+      .get(getApiUrl(API_CONFIG.ENDPOINTS.USER_DRAWINGS), {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },

@@ -6,8 +6,9 @@ import io from "socket.io-client";
 import Loader from "../Loader";
 import { WhiteBoardState } from "../../context/whiteBoardProvider";
 import EnterName from "../EnterName";
+import { getApiUrl, getSocketUrl, API_CONFIG } from "../../config/api";
 
-const ENDPOINT = "http://localhost:3000";
+const ENDPOINT = getSocketUrl();
 var socket;
 
 function MyBoard(props) {
@@ -49,7 +50,7 @@ function MyBoard(props) {
     setSpin(true);
     axios
       .put(
-        "http://localhost:3000/api/v1/drawing/updateInfo",
+        getApiUrl(API_CONFIG.ENDPOINTS.UPDATE_DRAWING),
         {
           imgId: RoomID,
           elementsArray: drawingElementsRef.current,
@@ -84,7 +85,7 @@ function MyBoard(props) {
 
   useLayoutEffect(() => {
     setSpin(true);
-    const uri = "http://localhost:3000/api/v1/drawing/" + RoomID;
+    const uri = getApiUrl(API_CONFIG.ENDPOINTS.GET_DRAWING + RoomID);
     axios
       .get(uri.toString(), {
         headers: {

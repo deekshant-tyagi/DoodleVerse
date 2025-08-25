@@ -5,8 +5,9 @@ import send from "../assets/send.svg";
 import MessageBox from "./MessageBox";
 import { WhiteBoardState } from "../context/whiteBoardProvider";
 import ScrollableFeed from "react-scrollable-feed";
+import { getSocketUrl } from "../config/api";
 
-var ENDPOINT = "http://localhost:3000";
+var ENDPOINT = getSocketUrl();
 var socket;
 
 const SideDrawer = ({ roomId, isLive }) => {

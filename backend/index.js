@@ -2,24 +2,38 @@ const express = require("express"); // http request
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mainRouter = require("./routes/index");
+require("dotenv").config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
-app.use(cors());
+// CORS configuration
+app.use(
+  cors({
+    origin: FRONTEND_URL,
+    credentials: true,
+  })
+);
+
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
 
 app.use("/api/v1", mainRouter);
 
-const server = app.listen(3000, console.log("listening on port 3000"));
+const server = app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+  console.log(`CORS enabled for: ${FRONTEND_URL}`);
+});
 
 //Socket Logic
 const rooms = {};
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: FRONTEND_URL,
+    credentials: true,
   },
 });
 

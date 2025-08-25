@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { getApiUrl, API_CONFIG } from "../config/api";
 
 export default function CreateModal({ label }) {
   const [showModal, setShowModal] = React.useState(false);
@@ -110,7 +111,7 @@ export default function CreateModal({ label }) {
                       console.log(title);
                       axios
                         .post(
-                          "http://localhost:3000/api/v1/drawing/create",
+                          getApiUrl(API_CONFIG.ENDPOINTS.CREATE_DRAWING),
                           {
                             title: title,
                           },

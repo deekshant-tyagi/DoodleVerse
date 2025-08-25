@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getFrontendUrl } from "../config/api";
 
 export default function JoinModal() {
   const [showModal, setShowModal] = React.useState(false);
@@ -8,7 +9,7 @@ export default function JoinModal() {
   const openInNewTab = () => {
     var url = "";
     if (code.trim() !== "") {
-      url = "http://localhost:5173/whiteboard/" + code;
+      url = getFrontendUrl("/whiteboard/" + code);
     } else if (link.trim() !== "") {
       url = link;
     } else {

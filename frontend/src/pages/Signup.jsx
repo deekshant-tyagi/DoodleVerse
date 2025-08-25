@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getApiUrl, API_CONFIG } from "../config/api";
 
 export const Signup = () => {
   const [fullName, setFullName] = useState("");
@@ -14,7 +15,7 @@ export const Signup = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/me", {
+      .get(getApiUrl(API_CONFIG.ENDPOINTS.ME), {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -105,7 +106,7 @@ export const Signup = () => {
               <button
                 onClick={() => {
                   axios
-                    .post("http://localhost:3000/api/v1/user/signup", {
+                    .post(getApiUrl(API_CONFIG.ENDPOINTS.SIGNUP), {
                       fullName,
                       username,
                       password,

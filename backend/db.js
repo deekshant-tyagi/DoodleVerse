@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-    
-mongoose.connect(
-  "mongodb+srv://deekshanttyagii:Kn78AyJUNoOb839Q@cluster0.llq7g.mongodb.net/doodleProject?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://deekshanttyagii:Kn78AyJUNoOb839Q@cluster0.llq7g.mongodb.net/doodleProject?retryWrites=true&w=majority";
 
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const userSchema = new mongoose.Schema({
   username: {
