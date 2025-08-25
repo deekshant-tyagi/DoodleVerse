@@ -38,7 +38,7 @@ In your Render dashboard, go to Environment tab and add:
 NODE_ENV=production
 PORT=3000
 MONGODB_URI=mongodb+srv://deekshanttyagii:Kn78AyJUNoOb839Q@cluster0.llq7g.mongodb.net/doodleProject?retryWrites=true&w=majority
-JWT_SECRET=deekshantTyagi
+JWT_SECRET=sherrr
 FRONTEND_URL=https://your-app-name.netlify.app
 ```
 
